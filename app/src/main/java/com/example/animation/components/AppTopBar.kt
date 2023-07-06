@@ -21,7 +21,7 @@ fun AppTopBar(
 ) {
     TopAppBar(
         modifier = Modifier.fillMaxWidth(),
-        colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.background),
+        colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
         title = {
             Row(
                 horizontalArrangement = Arrangement.SpaceEvenly,

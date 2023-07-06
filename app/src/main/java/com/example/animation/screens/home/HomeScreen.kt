@@ -11,9 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.animation.navigation.AppScreens
 import com.example.animation.components.AppTopBar
 import com.example.animation.components.GridCardItem
+import com.example.animation.navigation.AppScreens
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -26,7 +26,9 @@ fun HomeScreen(navController: NavHostController) {
                 .padding(it),
             columns = GridCells.Fixed(2),
             content = {
-                items(AppScreens.values()) { item ->
+                items(AppScreens.values().filter { screen ->
+                    screen != AppScreens.HomeScreen
+                }) { item ->
                     GridCardItem(item.value) {
                         navController.navigate(item.name)
                     }

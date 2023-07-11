@@ -20,7 +20,7 @@ fun AppNavigation() {
             HomeScreen(navController)
         }
         composable(route = AppScreens.ContentChange.name) {
-            ContentChangeAnimations()
+            ContentChangeAnimations(navController)
         }
     }
 

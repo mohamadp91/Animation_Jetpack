@@ -8,24 +8,32 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.animation.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GridCardItem(
     value: String,
+    cardSize: Pair<Dp, Dp>,
+    CardImage: @Composable () -> Unit = {
+        Image(
+            painter = painterResource(id = R.drawable.ic_launcher_background),
+            contentDescription = "",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(cardSize.second / 4 * 3 - 24.dp)
+        )
+    },
     onClick: () -> Unit
 ) {
-    val configuration = LocalConfiguration.current
-    val cardWidth = (configuration.screenWidthDp / 2 - 24).dp
-    val cardHeight = (configuration.screenHeightDp / 3 - 24).dp
-
+    val (cardWidth, cardHeight) = cardSize
     Card(
         onClick = { onClick.invoke() },
         shape = RoundedCornerShape(percent = 25),
@@ -40,33 +48,18 @@ fun GridCardItem(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.fillMaxSize()
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.ic_launcher_background),
-                contentDescription = "",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(cardHeight / 3 * 2)
+            CardImage()
+            Divider(
+                modifier = Modifier.fillMaxWidth(),
+                color = MaterialTheme.colorScheme.secondary
             )
             Text(
                 text = value,
-                style = MaterialTheme.typography.labelSmall,
-                fontWeight = FontWeight.Bold,
                 modifier = Modifier
-                    .padding(
-                        horizontal = 8.dp,
-                        vertical = 12.dp
-                    ),
+                    .padding(4.dp),
+                fontSize = 10.sp,
                 textAlign = TextAlign.Center
             )
         }
-    }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    GridCardItem("Built In Android      Package") {
     }
 }

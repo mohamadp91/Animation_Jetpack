@@ -39,8 +39,8 @@ fun AppTopBar(
                 Text(
                     text = title,
                     color = MaterialTheme.colorScheme.primary,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = MaterialTheme.typography.titleLarge.fontSize
+                    fontSize = MaterialTheme.typography.titleSmall.fontSize,
+                    fontWeight = FontWeight.Bold
                 )
             }
         },

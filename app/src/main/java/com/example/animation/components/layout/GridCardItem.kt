@@ -9,7 +9,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -50,29 +49,17 @@ fun GridCardItem(
             modifier = Modifier.fillMaxSize()
         ) {
             CardImage()
+            Divider(
+                modifier = Modifier.fillMaxWidth(),
+                color = MaterialTheme.colorScheme.secondary
+            )
             Text(
                 text = value,
                 modifier = Modifier
-                    .padding(
-                        horizontal = 4.dp,
-                        vertical = 12.dp
-                    ),
+                    .padding(4.dp),
                 fontSize = 10.sp,
                 textAlign = TextAlign.Center
             )
         }
-    }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    GridCardItem(
-        "Built In Android Package", Pair(
-            200.dp,
-            200.dp
-        )
-    ) {
     }
 }

@@ -2,20 +2,21 @@ package com.example.animation.screens.animation
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Tab
-import androidx.compose.material3.TabRow
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.animation.R
+import com.example.animation.components.AppTopBar
 import com.example.animation.components.animations.AppearanceAnimation
 import com.example.animation.components.animations.SwapContentAnimation
 
 @Composable
-fun ContentChangeAnimations() {
+fun ContentChangeAnimations(navController: NavController) {
     val context = LocalContext.current
     val tabTitles = listOf(
         context.getString(R.string.content_change_tab1),
@@ -24,29 +25,40 @@ fun ContentChangeAnimations() {
     )
     var selectedTabIndex by remember { mutableStateOf(0) }
 
-    Column(modifier = Modifier.fillMaxSize()) {
-        TabRow(
-            selectedTabIndex = selectedTabIndex,
-            containerColor = MaterialTheme.colorScheme.primary
+    Scaffold(topBar = {
+        AppTopBar(
+            navController = navController,
+            title = "Content Change Animations"
+        )
+    }) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
         ) {
-            tabTitles.forEachIndexed { index, title ->
-                Tab(
-                    selected = selectedTabIndex == index,
-                    onClick = { selectedTabIndex = index },
-                    text = {
-                        Text(
-                            text = title,
-                            color = MaterialTheme.colorScheme.onPrimary
-                        )
-                    }
-                )
+            TabRow(
+                selectedTabIndex = selectedTabIndex,
+                containerColor = MaterialTheme.colorScheme.secondary.copy(alpha = .7f)
+            ) {
+                tabTitles.forEachIndexed { index, title ->
+                    Tab(
+                        selected = selectedTabIndex == index,
+                        onClick = { selectedTabIndex = index },
+                        text = {
+                            Text(
+                                text = title,
+                                color = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
+                    )
+                }
             }
-        }
-        when (selectedTabIndex) {
-            0 -> AppearanceAnimation()
-            1 -> SwapContentAnimation()
-            2 -> {
-                //todo : implement
+            when (selectedTabIndex) {
+                0 -> AppearanceAnimation()
+                1 -> SwapContentAnimation()
+                2 -> {
+                    //todo : implement
+                }
             }
         }
     }
@@ -55,5 +67,5 @@ fun ContentChangeAnimations() {
 @Preview(showBackground = true)
 @Composable
 fun ContentChangeAnimationsPreview() {
-    ContentChangeAnimations()
+    ContentChangeAnimations(rememberNavController())
 }

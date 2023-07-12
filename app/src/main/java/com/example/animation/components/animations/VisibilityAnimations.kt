@@ -16,9 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.center
 import androidx.compose.ui.unit.dp
@@ -27,15 +25,11 @@ import com.example.animation.components.GridCardItem
 import com.example.animation.util.getScreenSize
 
 
-@Composable
-fun AppearanceAnimation() {
-    AppearanceGridLayout()
-}
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun AppearanceGridLayout() {
-    val appearanceAnimations = listOf(
+fun VisibilityAnimations() {
+    val animations = listOf(
         Triple("fade", fadeIn(), fadeOut()),
         Triple("slide horizontally", slideInHorizontally(), slideOutHorizontally()),
         Triple("slide vertically", slideInVertically(), slideOutVertically()),
@@ -49,7 +43,6 @@ fun AppearanceGridLayout() {
         )
     )
 
-    val density = LocalDensity.current
     val (screenWidth, screenHeight) = getScreenSize(LocalConfiguration.current)
     val cardWidth = (screenWidth / 2 - 24).dp
     val cardHeight = (screenHeight / 4 - 24).dp
@@ -60,7 +53,7 @@ fun AppearanceGridLayout() {
             .padding(8.dp),
         columns = GridCells.Fixed(2),
         content = {
-            items(appearanceAnimations) { item ->
+            items(animations) { item ->
                 GridCardItem(
                     value = item.first,
                     cardSize = Pair(cardWidth, cardHeight),

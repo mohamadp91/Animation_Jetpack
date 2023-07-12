@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 @Composable
 fun SwapContentAnimation() {
     Column(modifier = Modifier.fillMaxSize()) {
+        TextContentAnimations()
         CrossFadeAnimations()
     }
 }

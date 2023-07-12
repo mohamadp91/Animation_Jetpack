@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 fun CrossFadeAnimations() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Top
+        verticalArrangement = Arrangement.Center
     ) {
         ColoredRectangle()
     }

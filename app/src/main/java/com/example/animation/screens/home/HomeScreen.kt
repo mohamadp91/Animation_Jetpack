@@ -23,7 +23,10 @@ import com.example.animation.util.getScreenSize
 @Composable
 fun HomeScreen(navController: NavHostController) {
     Scaffold(topBar = {
-        AppTopBar(navController = navController)
+        AppTopBar(
+            isMainScreen = true,
+            title = "Home",
+            navController = navController)
     }) {
         CustomGridLayout(
             paddingValues = it,

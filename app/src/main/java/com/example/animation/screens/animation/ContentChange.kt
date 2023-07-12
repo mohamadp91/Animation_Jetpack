@@ -12,8 +12,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.animation.R
 import com.example.animation.components.AppTopBar
-import com.example.animation.components.animations.AppearanceAnimation
 import com.example.animation.components.animations.SwapContentAnimation
+import com.example.animation.components.animations.VisibilityAnimations
 
 @Composable
 fun ContentChangeAnimations(navController: NavController) {
@@ -36,7 +36,7 @@ fun ContentChangeAnimations(navController: NavController) {
                 .fillMaxSize()
                 .padding(it)
         ) {
-            TabRow(
+            ScrollableTabRow(
                 selectedTabIndex = selectedTabIndex,
                 containerColor = MaterialTheme.colorScheme.secondary.copy(alpha = .7f)
             ) {
@@ -54,9 +54,9 @@ fun ContentChangeAnimations(navController: NavController) {
                 }
             }
             when (selectedTabIndex) {
-                0 -> AppearanceAnimation()
+                0 -> VisibilityAnimations()
                 1 -> SwapContentAnimation()
-                2 -> {
+                3 -> {
                     //todo : implement
                 }
             }

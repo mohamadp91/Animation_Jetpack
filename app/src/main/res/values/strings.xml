@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Animation</string>
-    <string name="content_change_tab1">Appearance</string>
+    <string name="content_change_tab1">Visibility Animations</string>
     <string name="visibility">Visibility</string>
     <string name="content_change_tab2">Swap Content</string>
-    <string name="cross_fade">Cross Fade</string>
+    <string name="swap_content_animation">Content Animations</string>
+    <string name="swap_cross_fade">Cross Fade</string>
     <string name="content_change_tab3">Others</string>
 </resources>

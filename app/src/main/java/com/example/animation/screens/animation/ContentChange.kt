@@ -12,6 +12,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.animation.R
 import com.example.animation.components.AppTopBar
+import com.example.animation.components.animations.ContentSizeAnimation
 import com.example.animation.components.animations.SwapContentAnimation
 import com.example.animation.components.animations.VisibilityAnimations
 
@@ -56,9 +57,7 @@ fun ContentChangeAnimations(navController: NavController) {
             when (selectedTabIndex) {
                 0 -> VisibilityAnimations()
                 1 -> SwapContentAnimation()
-                3 -> {
-                    //todo : implement
-                }
+                2 -> ContentSizeAnimation()
             }
         }
     }

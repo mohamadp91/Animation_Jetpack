@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.animation.screens.animation.ContentChangeAnimations
+import com.example.animation.screens.animation.StateBasedAnimations
 import com.example.animation.screens.home.HomeScreen
 
 @Composable
@@ -21,6 +22,9 @@ fun AppNavigation() {
         }
         composable(route = AppScreens.ContentChange.name) {
             ContentChangeAnimations(navController)
+        }
+        composable(route = AppScreens.StateBased.name) {
+            StateBasedAnimations(navController)
         }
     }
 

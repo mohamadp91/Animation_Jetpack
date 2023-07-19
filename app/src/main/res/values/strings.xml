@@ -6,4 +6,6 @@
     <string name="swap_content_animation">Content Animations</string>
     <string name="swap_cross_fade">Cross Fade</string>
     <string name="content_change_tab3">Animate Size</string>
+    <string name="state_based_tab1">Infinite</string>
+    <string name="state_based_tab2">Value Based</string>
 </resources>

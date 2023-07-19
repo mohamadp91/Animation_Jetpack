@@ -13,13 +13,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.animation.R
 import com.example.animation.components.AppTopBar
 import com.example.animation.components.animations.state.InfiniteAnimation
+import com.example.animation.components.animations.state.ValueAnimation
 
 @Composable
 fun StateBasedAnimations(navController: NavController) {
     val tabList = listOf(
         stringResource(R.string.state_based_tab1),
         stringResource(R.string.state_based_tab2),
-        stringResource(R.string.state_based_tab3)
     )
     var selectedTab by remember {
         mutableStateOf(0)
@@ -36,7 +36,7 @@ fun StateBasedAnimations(navController: NavController) {
                 .fillMaxSize()
                 .padding(it)
         ) {
-            ScrollableTabRow(
+            TabRow(
                 selectedTabIndex = selectedTab,
                 containerColor = MaterialTheme.colorScheme.secondary.copy(alpha = .7f)
             ) {
@@ -56,6 +56,7 @@ fun StateBasedAnimations(navController: NavController) {
 
             when (selectedTab) {
                 0 -> InfiniteAnimation()
+                1 -> ValueAnimation()
             }
         }
     }

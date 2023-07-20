@@ -26,7 +26,8 @@ fun HomeScreen(navController: NavHostController) {
         AppTopBar(
             isMainScreen = true,
             title = "Home",
-            navController = navController)
+            navController = navController
+        )
     }) {
         CustomGridLayout(
             paddingValues = it,

@@ -5,8 +5,6 @@ import androidx.compose.animation.core.*
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Divider
@@ -75,7 +73,6 @@ fun MultipleValueAnimation() {
         mutableStateOf(false)
     }
     val transition = updateTransition(starting, label = "box state")
-
     val alpha by transition.animateFloat(
         label = "alpha",
         transitionSpec = createTransitionSpec(starting.value)
@@ -133,8 +130,7 @@ fun MultipleValueAnimation() {
                 .background(
                     color,
                     shape = RoundedCornerShape(50.dp)
-                )
-                , contentAlignment = Alignment.Center
+                ), contentAlignment = Alignment.Center
         ) {
             PlayButton(starting = starting)
         }

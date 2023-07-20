@@ -25,7 +25,6 @@ import com.example.animation.components.GridCardItem
 import com.example.animation.util.getScreenSize
 
 
-
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun VisibilityAnimations() {

@@ -1,11 +1,16 @@
 <resources>
-    <string name="app_name">Animation</string>
-    <string name="content_change_tab1">Visibility Animations</string>
-    <string name="visibility">Visibility</string>
-    <string name="content_change_tab2">Swap Content</string>
-    <string name="swap_content_animation">Content Animations</string>
-    <string name="swap_cross_fade">Cross Fade</string>
-    <string name="content_change_tab3">Animate Size</string>
-    <string name="state_based_tab1">Infinite</string>
-    <string name="state_based_tab2">Value Based</string>
+    <string name="app_name" translatable="false">Animation</string>
+    <string name="content_change_tab1" translatable="false">Visibility Animations</string>
+    <string name="visibility" translatable="false">Visibility</string>
+    <string name="content_change_tab2" translatable="false">Swap Content</string>
+    <string name="swap_content_animation" translatable="false">Content Animations</string>
+    <string name="swap_cross_fade" translatable="false">Cross Fade</string>
+    <string name="content_change_tab3" translatable="false">Animate Size</string>
+    <string name="state_based_tab1" translatable="false">Infinite</string>
+    <string name="state_based_tab2" translatable="false">Value Based</string>
+    <string name="typo_tab1" translatable="false">Basics</string>
+    <string name="typo_tab2" translatable="false">TextFields</string>
+    <string name="span_text" translatable="false">Hello I\'m Mohammad</string>
+    <string name="paragraph_text">TextStyle is for use in the Text composable, whereas SpanStyle and ParagraphStyle is for use in AnnotatedString. For more information about multiple styles in a paragraph, see Add multiple styles in a paragraph.</string>
+    <string name="paragraph_text_fa">TextStyle برای استفاده در Text composable است، در حالی که SpanStyle و ParagraphStyle برای استفاده در AnnotatedString است. برای اطلاعات بیشتر در مورد چند سبک در یک پاراگراف، به افزودن چند سبک در یک پاراگراف مراجعه کنید.</string>
 </resources>

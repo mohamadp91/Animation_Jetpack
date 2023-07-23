@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name="paragraph_text">TextStyle برای استفاده در Text composable است، در حالی که SpanStyle و ParagraphStyle برای استفاده در AnnotatedString است. برای اطلاعات بیشتر در مورد چند سبک در یک پاراگراف، به افزودن چند سبک در یک پاراگراف مراجعه کنید.</string>
+</resources>

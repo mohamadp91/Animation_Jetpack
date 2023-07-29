@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.animation.screens.ModifierScreen
 import com.example.animation.screens.TypographyScreen
 import com.example.animation.screens.animation.ContentChangeAnimations
 import com.example.animation.screens.animation.LowLevelAnimations
@@ -33,6 +34,9 @@ fun AppNavigation() {
         }
         composable(route = AppScreens.TypographyFeatures.name) {
             TypographyScreen(navController)
+        }
+        composable(route = AppScreens.ModifierScreen.name) {
+            ModifierScreen(navController)
         }
     }
 

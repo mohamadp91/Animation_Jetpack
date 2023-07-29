@@ -6,4 +6,5 @@ enum class AppScreens(val value: String) {
     StateBased("State based animations"),
     LowLevelAnimations("Coroutine based animations"),
     TypographyFeatures("Typography"),
+    ModifierScreen("Modifier screen"),
 }
